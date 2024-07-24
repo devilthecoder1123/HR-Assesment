@@ -98,7 +98,7 @@ const candidates = [
     imageUrl: "https://images.unsplash.com/photo-1664575602554-2087b04935a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVzaW5lc3MlMjB3b21hbnxlbnwwfDF8MHx8fDA%3D",
     applied: "February 2, 2020",
     appliedDatetime: "2020-07-20T11:20:45",
-    status: "Interview",
+    status: "Completed phone screening",
   },
   {
     name: "Michael Smith",
@@ -142,7 +142,7 @@ const candidates = [
       "https://images.unsplash.com/photo-1600745781275-56b856fc5c6e?ixid=MXwyMTI4MTd8MHwxfGFsbHwxfHx8fHx8fHwxNjc4Njg0NTAw&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
     applied: "April 10, 2020",
     appliedDatetime: "2020-09-01T13:25:20",
-    status: "Interview",
+    status: "Completed phone screening",
   },
   {
     name: "Jessica Brown",
@@ -187,7 +187,7 @@ const candidates = [
       "https://images.unsplash.com/photo-1544717301-b16b9cc1cc66?ixid=MXwyMTI4MTd8MHwxfGFsbHwxfHx8fHx8fHwxNjc4Njg0NzI5&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
     applied: "July 1, 2020",
     appliedDatetime: "2020-10-20T10:10:00",
-    status: "Interview",
+    status: "Completed phone screening",
   },
   {
     name: "Daniel White",
@@ -226,9 +226,8 @@ export default function Example() {
     setActiveTab(tabName);
   };
 
-  const filteredCandidates = candidates.filter(candidate =>
-    candidate.status === activeTab
-  );
+  const filteredCandidates = candidates.filter(candidate => activeTab === "Interview" ? candidate.status === "Completed phone screening" : candidate.status === activeTab);
+
 
 
   return (
